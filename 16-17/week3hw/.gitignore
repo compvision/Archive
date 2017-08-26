@@ -1,0 +1,3 @@
+#this tells git what files to ignore
+build/
+#we dont want the build folder since this has properties local to your system
