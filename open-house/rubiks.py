@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import math
 
-Video_capture = cv2.VideoCapture(1)
+Video_capture = cv2.VideoCapture(0)
 switch = 0
 THRESHOLD_MIN = np.array([53,5,5],np.uint8)
 THRESHOLD_MAX = np.array([58,255,255],np.uint8)
@@ -41,25 +41,37 @@ while(True):
         switch = switch + 1
     if key == 114:
         #red
-        THRESHOLD_MIN = np.array([0,5,5],np.uint8)
-        THRESHOLD_MAX = np.array([10,255,255],np.uint8)
+        #THRESHOLD_MIN = np.array([0,5,5],np.uint8)
+        #THRESHOLD_MAX = np.array([10,255,255],np.uint8)
+        THRESHOLD_MIN = np.array([160,5,5],np.uint8)
+        THRESHOLD_MAX = np.array([180,255,255],np.uint8)
     if key == 103:
         #green
-        THRESHOLD_MIN = np.array([120,5,5],np.uint8)
-        THRESHOLD_MAX = np.array([130,255,255],np.uint8)
+        #THRESHOLD_MIN = np.array([120,5,5],np.uint8)
+        #THRESHOLD_MAX = np.array([130,255,255],np.uint8)
+        THRESHOLD_MIN = np.array([60,5,5],np.uint8)
+        THRESHOLD_MAX = np.array([82,255,255],np.uint8)
     if key == 119:
         #white
-        THRESHOLD_MIN = np.array([53,5,5],np.uint8)
-        THRESHOLD_MAX = np.array([58,255,255],np.uint8)
+        #THRESHOLD_MIN = np.array([53,5,5],np.uint8)
+        #THRESHOLD_MAX = np.array([58,255,255],np.uint8)
+        THRESHOLD_MIN = np.array([80,5,5],np.uint8)
+        THRESHOLD_MAX = np.array([123,255,255],np.uint8)
     if key == 121:
         #yellow
-        THRESHOLD_MIN = np.array([53,5,5],np.uint8)
-        THRESHOLD_MAX = np.array([63,255,255],np.uint8)
+        #THRESHOLD_MIN = np.array([5,53,5],np.uint8)
+        #THRESHOLD_MAX = np.array([63,255,255],np.uint8)
+        THRESHOLD_MIN = np.array([18,5,5],np.uint8)
+        THRESHOLD_MAX = np.array([28,255,255],np.uint8)
     if key == 111:
         #orange
-        THRESHOLD_MIN = np.array([34,5,5],np.uint8)
-        THRESHOLD_MAX = np.array([44,255,255],np.uint8)
+        #THRESHOLD_MIN = np.array([34,5,5],np.uint8)
+        #THRESHOLD_MAX = np.array([44,255,255],np.uint8)
+        THRESHOLD_MIN = np.array([0,5,5],np.uint8)
+        THRESHOLD_MAX = np.array([16,255,255],np.uint8)
     if key == 98:
         #blue
-        THRESHOLD_MIN = np.array([187,5,5],np.uint8)
-        THRESHOLD_MAX = np.array([197,255,255],np.uint8)
+        #THRESHOLD_MIN = np.array([187,5,5],np.uint8)
+        #THRESHOLD_MAX = np.array([197,255,255],np.uint8)
+        THRESHOLD_MIN = np.array([100,5,5],np.uint8)
+        THRESHOLD_MAX = np.array([106,255,255],np.uint8)
