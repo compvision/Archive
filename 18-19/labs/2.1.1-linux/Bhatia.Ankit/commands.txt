@@ -1,0 +1,17 @@
+mkdir Pictures
+cd Pictures
+mkdir Wallpapers
+cd Wallpapers
+wget https://boygeniusreport.files.wordpress.com/2016/11/puppy-dog.jpg?quality=98&strip=all&w=782
+wget https://previews.123rf.com/images/piksel/piksel1406/piksel140600073/29670394-happy-family-outdoors.jpg
+cd ..
+cd ..
+mkdir Documents
+cd Documents
+mkdir Code
+cd Code
+nano hello.py
+touch cv.txt
+sudo apt-get install tree
+cd ~
+tree

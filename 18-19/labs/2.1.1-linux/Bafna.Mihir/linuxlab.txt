@@ -1,0 +1,16 @@
+mkdir Pictures
+cd Pictures
+mkdir Wallpapers
+cd ..
+wget https://i.kinja-img.com/gawker-media/image/upload/s--WFkXeene--/c_scale,f_auto,fl_progressive,q_80,w_800/ol9ceoqxidudap8owlwn.jpg
+cd Wallpapers
+wget https://images-na.ssl-images-amazon.com/images/I/61CY9Y82yML.jpg
+cd ..
+mkdir Documents
+cd Documents
+mkdir Code
+touch hello.py
+touch cv.txt
+sudo apt-get install tree
+cd ~
+./tree

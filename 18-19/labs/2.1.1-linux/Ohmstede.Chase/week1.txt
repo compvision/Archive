@@ -1,0 +1,15 @@
+mkdir Pictures
+mkdir Wallpapers
+cd ..
+wget https://img.huffingtonpost.com/asset/5b7fdeab1900001d035028dc.jpeg?cache=sixpwrbb1s&ops=1910_1000
+wget http://www.twopinkcanaries.com/wp-content/uploads/2016/05/ways-to-create-happy-family2.jpg
+cd Wallpapers
+wget http://www.thelittletravelrebels.com/wp-content/uploads/2018/07/4k-wallpaper-agriculture-android-wallpaper-1146708.jpg
+mkdir Documents
+mkdir Code
+touch hello.py
+touch cv.txt
+sudo apt-get install tree
+mv tree ~
+./ tree
+

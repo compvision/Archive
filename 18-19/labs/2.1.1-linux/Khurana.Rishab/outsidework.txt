@@ -1,0 +1,17 @@
+mkdir Pictures
+cd Pictures
+mkdir Wallpapers
+wget https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiE_oji3oLeAhWIHzQIHYf1AbMQjRx6BAgBEAU&url=https%3A%2F%2Fwww.healthypawspetinsurance.com%2Fdog-and-puppy-insurance&psig=AOvVaw0qxFyycTpclRr4PfP2j8ii&ust=1539496835506333
+wget https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.liceclinicsofamerica.com%2Fwp-content%2Fuploads%2F2016%2F11%2Fhead_lice_treatment_helps_families.jpg&imgrefurl=https%3A%2F%2Fwww.liceclinicsofamerica.com%2Flice-clinic-owner-helps-families-win-lice-war%2F&docid=NYiWn3nojCRX2M&tbnid=1WWt7qIz1OYPXM%3A&vet=10ahUKEwiP0uOA34LeAhVuHDQIHae7CZAQMwhrKAAwAA..i&w=4920&h=3280&bih=577&biw=1366&q=happy%20family&ved=0ahUKEwiP0uOA34LeAhVuHDQIHae7CZAQMwhrKAAwAA&iact=mrc&uact=8
+cd Wallpapers
+wget https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1530075288903-69b220251c3e%3Fixlib%3Drb-0.3.5%26ixid%3DeyJhcHBfaWQiOjEyMDd9%26s%3D032bc1890fe094136025465c66302731%26w%3D1000%26q%3D80&imgrefurl=https%3A%2F%2Funsplash.com%2Fsearch%2Fphotos%2Fandroid-wallpaper&docid=THRvli5KSYVFLM&tbnid=wClfDaghiey_6M%3A&vet=10ahUKEwjmjLGU34LeAhUgHzQIHcnvCrIQMwhsKAAwAA..i&w=1000&h=1500&bih=577&biw=1366&q=wallpaper&ved=0ahUKEwjmjLGU34LeAhUgHzQIHcnvCrIQMwhsKAAwAA&iact=mrc&uact=8
+cd Rishi\ Khurana
+mkdir Documents
+cd Documents
+mkdir Code
+cd Code
+touch hello.py
+touch cv.txt
+sudo apt-get install tree
+cd ~
+tree

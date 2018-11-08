@@ -1,0 +1,107 @@
+import cv2
+import numpy as np
+import math
+
+FOCAL_LENGTH = 700
+ACTUAL_WIDTH = 50
+ACTUAL_HEIGHT = 25
+
+def findLeast(a):
+    least = 10000
+    for i in range(len(a)):
+        if (a[i] < least):
+            least = a[i]
+    return least
+
+def findGreatest(a):
+    greatest = -1
+    for i in range(len(a)):
+        if (a[i] > greatest):
+            greatest = a[i]
+    return greatest
+
+def radiansToDegrees(radians):
+    return (radians * (180 / math.pi))
+
+src = cv2.imread("rect2.jpg")
+imgCenterY = src.shape[0] / 2
+imgCenterX = src.shape[1] / 2
+
+hsv = cv2.cvtColor(src, cv2.COLOR_BGR2HSV)
+
+lower = np.array([0, 0, 200])
+upper = np.array([255, 67, 255])
+mask = cv2.inRange(hsv, lower, upper)
+
+_, contours, _ = cv2.findContours(mask, cv2.RETR_TREE, 
+cv2.CHAIN_APPROX_SIMPLE)
+
+for x in range (len(contours)):
+    epsilon = 0.1 * cv2.arcLength(contours[x], True)
+    approx = cv2.approxPolyDP(contours[x], epsilon, True)
+
+    if cv2.contourArea(approx) > 500 & len(approx) >= 4:
+
+        xPoints = [0, 0, 0, 0]
+        for a in range (len(approx)):
+            for b in range (len(approx[a])):
+                """Finding all x points of the corners"""
+                xPoints[a] = approx[a][b][0]
+
+        xMin = findLeast(xPoints)
+        xMax = findGreatest(xPoints)
+
+        yPoints = [0, 0, 0, 0]
+        for a in range(len(approx)):
+            for b in range(len(approx[a])):
+                """Finding all y points of the corners"""
+                yPoints[a] = approx[a][b][1]
+
+        yMin = findLeast(yPoints)
+        yMax = findGreatest(yPoints)
+
+        """Finding width of rectangle by subtracting max x point and min 
+x point"""
+        width = xMax - xMin
+        """Finding height of rectangle by subtracting max y point and 
+min y point"""
+        height = yMax - yMin
+
+        centerX = (xMax + xMin) / 2
+        centerY = (yMax + yMin) / 2
+
+        cv2.drawContours(src, contours, x, (0, 255, 0), 3)
+        cv2.line(src, (centerX, centerY), (centerX, centerY), (0, 255, 
+0), 5)
+
+        distance = (FOCAL_LENGTH * ACTUAL_WIDTH) / width
+        H_azimuth = centerX - imgCenterX
+        H_altitude = centerY - imgCenterY
+        """
+        print(H_azimuth)
+        print(H_altitude)
+        print(float(H_azimuth) / float(FOCAL_LENGTH))
+        print(float(H_altitude) / float(FOCAL_LENGTH))
+        """
+        azimuth = radiansToDegrees(math.atan(float(H_azimuth) / 
+FOCAL_LENGTH))
+        altitude = radiansToDegrees(math.atan(float(H_altitude) / 
+FOCAL_LENGTH))
+
+        print("Width of Rect: " + str(width) + " pixels")
+        print("Height of Rect: " + str(height) + " pixels")
+        print("Center of Rectangle: (" + str(centerX) + ", " + 
+str(centerY) + ")")
+        print("Center of Image: (" + str(imgCenterX) + ", " + 
+str(imgCenterY) + ")")
+        print("")
+        print("Distance of Rect: " + str(distance) + " centimeters")
+        print("Azimuth: " + str(azimuth) + " degrees")
+        print("Altitude: " + str(altitude) + " degrees")
+
+cv2.imshow("Frame", src)
+cv2.imshow("Mask", mask)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+

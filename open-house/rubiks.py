@@ -2,15 +2,19 @@ import numpy as np
 import cv2
 import math
 
-Video_capture = cv2.VideoCapture(0)
+Video_capture = cv2.VideoCapture(1)
 switch = 0
 THRESHOLD_MIN = np.array([53,5,5],np.uint8)
 THRESHOLD_MAX = np.array([58,255,255],np.uint8)
 
 #def __init__(self):
 
+num = 0
+total = 0
+
 while(True):
-    cv2.namedWindow('Output', cv2.WINDOW_NORMAL)
+    cv2.namedWindow('Output',cv2.WND_PROP_FULLSCREEN)
+    cv2.setWindowProperty('Output', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
     ret,frame = Video_capture.read()
 
@@ -24,11 +28,20 @@ while(True):
 
         image, contours, hierarchy = cv2.findContours(frame_threshed, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-        cv2.drawContours(image, contours, -1, (255,255,255), 1)
+        #cv2.drawContours(image, contours, -1, (255,255,255), 1)
 
         if(switch == 2):
+            #cv2.imshow('Output', image)
+            for count, cont in enumerate(contours):
+                epsilon = 0.1*cv2.arcLength(cont, True)
+                approx = cv2.approxPolyDP(cont, epsilon, True)
+                
+                if cv2.contourArea(approx) > 500 and len(approx) == 4:
+                    cv2.drawContours(image, contours, count, (255,255,255), 2)
+            
             cv2.imshow('Output', image)
-    if(switch == 0):
+            
+    elif(switch == 0):
         cv2.imshow('Output', frame)
 
     key = cv2.waitKey(10)
@@ -55,8 +68,8 @@ while(True):
         #white
         #THRESHOLD_MIN = np.array([53,5,5],np.uint8)
         #THRESHOLD_MAX = np.array([58,255,255],np.uint8)
-        THRESHOLD_MIN = np.array([80,5,5],np.uint8)
-        THRESHOLD_MAX = np.array([123,255,255],np.uint8)
+        THRESHOLD_MIN = np.array([10,5,5],np.uint8)
+        THRESHOLD_MAX = np.array([26,255,255],np.uint8)
     if key == 121:
         #yellow
         #THRESHOLD_MIN = np.array([5,53,5],np.uint8)
@@ -68,10 +81,10 @@ while(True):
         #THRESHOLD_MIN = np.array([34,5,5],np.uint8)
         #THRESHOLD_MAX = np.array([44,255,255],np.uint8)
         THRESHOLD_MIN = np.array([0,5,5],np.uint8)
-        THRESHOLD_MAX = np.array([16,255,255],np.uint8)
+        THRESHOLD_MAX = np.array([10,255,255],np.uint8)
     if key == 98:
         #blue
         #THRESHOLD_MIN = np.array([187,5,5],np.uint8)
         #THRESHOLD_MAX = np.array([197,255,255],np.uint8)
-        THRESHOLD_MIN = np.array([100,5,5],np.uint8)
-        THRESHOLD_MAX = np.array([106,255,255],np.uint8)
+        THRESHOLD_MIN = np.array([95,5,5],np.uint8)
+        THRESHOLD_MAX = np.array([110,255,255],np.uint8)

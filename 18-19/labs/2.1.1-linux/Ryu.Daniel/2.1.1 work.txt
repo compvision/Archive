@@ -1,0 +1,18 @@
+Ryu.Daniel
+
+mkdir Pictures
+cd Pictures
+mkdir Wallpapers
+wget https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.liceclinicsofamerica.com%2Fwp-content%2Fuploads%2F2016%2F11%2Fhead_lice_treatment_helps_families.jpg&imgrefurl=https%3A%2F%2Fwww.liceclinicsofamerica.com%2Flice-clinic-owner-helps-families-win-lice-war%2F&docid=NYiWn3nojCRX2M&tbnid=1WWt7qIz1OYPXM%3A&vet=10ahUKEwjPo_q-soLeAhUFiVQKHY4DBAsQMwhqKAAwAA..i&w=4920&h=3280&safe=strict&bih=890&biw=1500&q=happy%20family&ved=0ahUKEwjPo_q-soLeAhUFiVQKHY4DBAsQMwhqKAAwAA&iact=mrc&uact=8
+wget https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.healthypawspetinsurance.com%2FImages%2FV3%2FDogAndPuppyInsurance%2FDog_CTA_Desktop_HeroImage.jpg&imgrefurl=https%3A%2F%2Fwww.healthypawspetinsurance.com%2Fdog-and-puppy-insurance&docid=XSBCnaLevnYCFM&tbnid=71jMekyOJL5KEM%3A&vet=10ahUKEwienKPRsoLeAhXC31QKHYagDDIQMwhrKAAwAA..i&w=1280&h=620&safe=strict&bih=890&biw=1500&q=dog&ved=0ahUKEwienKPRsoLeAhXC31QKHYagDDIQMwhrKAAwAA&iact=mrc&uact=8
+cd Wallpapers
+wget https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F813269%2Fpexels-photo-813269.jpeg%3Fcs%3Dsrgb%26dl%3Dsky-night-space-813269.jpg%26fm%3Djpg&imgrefurl=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fdesktop%2520wallpaper%2F&docid=PhC6ET7oGxqg8M&tbnid=UWA8wjRJ03SLnM%3A&vet=10ahUKEwi84NLbsoLeAhUJj1QKHWG9AUgQMwhsKAEwAQ..i&w=4040&h=2304&safe=strict&bih=890&biw=1500&q=wallpaper&ved=0ahUKEwi84NLbsoLeAhUJj1QKHWG9AUgQMwhsKAEwAQ&iact=mrc&uact=8
+mkdir Documents
+cd Documents
+mkdir Code
+cd Code
+touch cv.txt
+touch hello.py
+sudo apt-get install tree
+cd ~
+./ tree
